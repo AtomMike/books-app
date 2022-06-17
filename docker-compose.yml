@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+    booksapp:
+        container_name: booksapp
+        image: booksapp
+        restart: always
+        working_dir: /app
+        build:
+            context: .
+            dockerfile: Dockerfile
+            target: base
+        volumes:
+            - ./booksapp/pages/:/app/pages
+            - /booksapp/node_modules
+        ports:
+            - "3001:3000"
