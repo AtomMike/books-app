@@ -117,7 +117,7 @@ const Books = ({books}) => {
   }
   const editBookAction = () => {
     setOpenEditBookDialogue(false)
-    console.log('editBookId ',editBookId)
+
     updateBook(editBookId)
   }
 
@@ -134,7 +134,6 @@ const Books = ({books}) => {
     }
     return [year, month, day].join('-');
   }
-  // console.log(formatDate('Febuary 1, 2021'));
 
 
   const changeTitle = (value) => {
@@ -264,7 +263,6 @@ const Books = ({books}) => {
     })
   }
   const updateBook = async (id) => {
-    // console.log(editBookId, editBookName, editBookISBN, editBookDate, editBookAuthorId)
 
     const res = await Axios.put('/book/'+editBookId, {
       isbn:editBookISBN,
